@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Navigate, Link } from "react-router-dom";
+import OldPage from "./OldPage";
+import NewPage from "./NewPage";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <h1>React App with Custom Routing</h1>
+        
+        {/* Navigation Links */}
+        <nav>
+          <Link to="/old" style={{ margin: "10px" }}>Old Page</Link>
+          <Link to="/new" style={{ margin: "10px" }}>New Page</Link>
+        </nav>
+
+        <Routes>
+          {/* Default route redirects to /old */}
+          <Route path="/" element={<Navigate to="/old" />} />
+          
+          {/* Old Page */}
+          <Route path="/old" element={<OldPage />} />
+          
+          {/* New Page */}
+          <Route path="/new" element={<NewPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
