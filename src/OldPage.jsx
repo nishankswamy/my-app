@@ -1,11 +1,14 @@
 import React from "react";
-import DateTimePicker from "./DateTimePicker"; // Import the component
+import { useNavigate } from "react-router-dom";
+import CustomDateInput from "./CustomDateInput";
 
 function OldPage() {
+  const navigate = useNavigate();
+
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>React Date & Time Picker</h1>
-      <DateTimePicker />  {/* Use the component here */}
+      <h1>Appointment booking Variant A</h1>
+      <CustomDateInput onNavigate={() => navigate("/new")} />
     </div>
   );
 }

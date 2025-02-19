@@ -8,13 +8,7 @@ function App() {
   return (
     <Router>
       <div style={{ textAlign: "center", marginTop: "20px" }}>
-        <h1>React App with Custom Routing</h1>
-        
-        {/* Navigation Links */}
-        <nav>
-          <Link to="/old" style={{ margin: "10px" }}>Old Page</Link>
-          <Link to="/new" style={{ margin: "10px" }}>New Page</Link>
-        </nav>
+      
 
         <Routes>
           {/* Default route redirects to /old */}
